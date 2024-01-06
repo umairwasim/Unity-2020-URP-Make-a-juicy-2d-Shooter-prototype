@@ -12,7 +12,7 @@ public class AgentInput : MonoBehaviour, IAgentInput
     public UnityEvent<Vector2> OnMovementKeyPressed { get; set; }
 
     [field: SerializeField]
-    public UnityEvent<Vector2> OnPointerPositionChange { get; set; }
+    public UnityEvent<Vector2> OnPointerPositionChanged { get; set; }
 
     [field: SerializeField]
     public UnityEvent OnFireButtonPressed { get; set; }
@@ -60,7 +60,7 @@ public class AgentInput : MonoBehaviour, IAgentInput
             Input.mousePosition.x,
             Input.mousePosition.y,
             mainCamera.nearClipPlane));
-        OnPointerPositionChange?.Invoke(mouseInWorldSpace);
+        OnPointerPositionChanged?.Invoke(mouseInWorldSpace);
     }
 
     private void GetMovementInput()
