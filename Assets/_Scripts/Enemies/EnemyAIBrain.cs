@@ -21,7 +21,7 @@ public class EnemyAIBrain : MonoBehaviour, IAgentInput
     public UnityEvent<Vector2> OnMovementKeyPressed { get; set; }
 
     [field: SerializeField]
-    public UnityEvent<Vector2> OnPointerPositionChange { get; set; }
+    public UnityEvent<Vector2> OnPointerPositionChanged { get; set; }
 
     private void Awake()
     {
@@ -48,7 +48,7 @@ public class EnemyAIBrain : MonoBehaviour, IAgentInput
     public void Move(Vector2 movementDirection, Vector2 targetPosition)
     {
         OnMovementKeyPressed?.Invoke(movementDirection);
-        OnPointerPositionChange?.Invoke(targetPosition);
+        OnPointerPositionChanged?.Invoke(targetPosition);
     }
 
     public void ChangeToState(AIState state)
