@@ -1,6 +1,4 @@
 using DG.Tweening;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ShakeFeedback : Feedback
@@ -10,9 +8,9 @@ public class ShakeFeedback : Feedback
     [SerializeField]
     private float duration = 0.2f, strength = 1, randomness = 90;
     [SerializeField]
-    private int vibrato = 10;
-    [SerializeField]
-    private bool snapping = false, fadeout = true;
+    private readonly int vibrato = 10;
+    private readonly bool snapping = false;
+    private readonly bool fadeout = true;
 
     public override void CompletePreviousFeedback()
     {
