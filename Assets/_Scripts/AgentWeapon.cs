@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AgentWeapon : MonoBehaviour
@@ -33,22 +30,22 @@ public class AgentWeapon : MonoBehaviour
 
     protected void AdjustWeaponRendering()
     {
-        if(weaponRenderer != null)
+        if (weaponRenderer != null)
         {
             weaponRenderer.FlipSprite(desiredAngle > 90 || desiredAngle < -90);
             weaponRenderer.RenderBehindHead(desiredAngle < 180 && desiredAngle > 0);
-        }        
+        }
     }
 
     public void Shoot()
     {
-        if(weapon != null)
+        if (weapon != null)
             weapon.TryShooting();
     }
 
     public void StopShooting()
     {
-        if(weapon != null)
+        if (weapon != null)
             weapon.StopShooting();
     }
 }
